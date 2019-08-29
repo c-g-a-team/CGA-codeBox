@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时监控</title>
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A </h1>
+            </div>
+            <!-- //logo -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('policefunction') }}">功能选择页</a></li>
+                        <li><a href="{{ url_for('index') }}">违章查询</a></li>
+                        <li><a href="{{ url_for('monitor') }}">实时监控</a></li>
+                        <li><a href="arr">路段统计</a></li>
+                        <li><a href="{{ url_for('policeexamine') }}">人工审核</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main-w3pvt mian-content-wfour text-center" id="home" style="padding-top:60px">
+    <div align="center">
+        <video src="../static/video.MOV" width="850" height="580" controls></video>
+
+    </div>
+
+    <div align="center">
+        <a href="{{ url_for("carcheck") }}">
+            <button type="submit" class="btn button-style-w4">开始检测</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

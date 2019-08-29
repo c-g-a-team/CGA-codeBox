@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待审核违章记录</title>
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A</h1>
+            </div>
+            <!-- //logo -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('caruserfunction') }}">功能选择页</a></li>
+                        <li><a href="{{ url_for('userinfoshow') }}">我的违章记录</a></li>
+                        <li><a href="{{ url_for('pending') }}">待审核违章记录</a></li>
+                        <li><a href="{{ url_for('solved') }}">已审核违章记录</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div align="center" style="padding-top: 100px;padding-left: 200px;padding-right: 200px"
+     class="main-w3pvt mian-content-wfour text-center">
+
+    {% block title %}<h2>我的待审核违章记录</h2>{% endblock %}
+    <br>
+    {% block page_content %}
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th style="text-align: center;" scope="col">车牌</th>
+                <th style="text-align: center;" scope="col">车型</th>
+                <th style="text-align: center;" scope="col">时间</th>
+                <th style="text-align: center;" scope="col">地点</th>
+                <th style="text-align: center;" scope="col">违章照片</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td style="text-align:center;vertical-align:middle;">{{ u4[1] }}</td>
+                <td style="text-align:center;vertical-align:middle;">{{ u4[2] }}</td>
+                <td style="text-align:center;vertical-align:middle;">{{ u4[3] }}</td>
+                <td style="text-align:center;vertical-align:middle;">{{ u4[4] }}</td>
+                <td style="text-align:center;vertical-align:middle;"><img src={{ u4[5] }} width="200" height="120"
+                                                                          alt={{ u4[5] }}/></td>
+            </tr>
+            </tbody>
+        </table>
+    {% endblock %}
+
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>车主登录界面</title>
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Land Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+
+</head>
+
+<body>
+<!-- header -->
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A</h1>
+            </div>
+            <!-- //logo -->
+            <!-- nav -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('shouye') }}">回到首页</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //nav -->
+        </div>
+    </div>
+</header>
+<!-- //header -->
+
+<!-- inner banner -->
+<div class="inner-banner-w3ls py-5" id="home">
+    <div class="container py-xl-5 py-lg-3">
+        <!-- login  -->
+        <div class="modal-body my-5 pt-4">
+            <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">车主登录</h3>
+            <form action="dologin1" method="get">
+                <div class="form-group">
+                    <label class="col-form-label">选择车型</label>
+                    <select id="province" required="" class="form-control">
+                        <option value="0">小型汽车</option>
+                        <option value="1">大型汽车</option>
+                        <option value="2">新能源小车</option>
+                        <option value="3">新能源大车</option>
+                        <option value="4">香港入境车</option>
+                        <option value="5">澳门入境车</option>
+                        <option value="6">使馆汽车</option>
+                        <option value="7">领馆汽车</option>
+                        <option value="8">境外汽车</option>
+                        <option value="9">外籍汽车</option>
+                        <option value="10">两三轮摩托</option>
+                        <option value="11">轻便摩托车</option>
+                        <option value="12">使馆摩托车</option>
+                        <option value="13">领馆摩托车</option>
+                        <option value="14">境外摩托车</option>
+                        <option value="15">外籍摩托车</option>
+                        <option value="16">农用运输车</option>
+                        <option value="17">拖拉机</option>
+                        <option value="18">挂车</option>
+                        <option value="19">教练汽车</option>
+                        <option value="20">教练摩托车</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">车牌号</label>
+                    <input type="text" class="form-control" placeholder="请输入车牌号" name="carNum" required="">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">发动机号</label>
+                    <input type="text" class="form-control" placeholder="请输入发动机号" name="engineNum" required="">
+                </div>
+                <button type="submit" class="btn button-style-w3"> 登录</button>
+                <div class="row sub-w3l mt-3 mb-5">
+                    <div class="col-sm-6 sub-w3layouts_hub">
+                        <input type="checkbox" id="brand1" value="">
+                        <label for="brand1" class="text-li text-style-w3ls">
+                            <span></span>记住我?</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- //login -->
+    </div>
+</div>
+<!-- //inner banner -->
+
+
+<!-- copyright -->
+<div class="copyright-w3ls py-4">
+    <div class="container">
+        <div class="row">
+            <!-- copyright -->
+            <p class="col-lg-8 copy-right-grids text-wh text-lg-left text-center mt-lg-2">© 2019 Land. All
+                Rights Reserved | Design by C.G.A
+            </p>
+            <!-- //copyright -->
+
+        </div>
+    </div>
+</div>
+<!-- //copyright -->
+<!-- move top icon -->
+<a href="#home" class="move-top text-center">
+    <span class="fa fa-angle-double-up" aria-hidden="true"></span>
+</a>
+<!-- //move top icon -->
+
+</body>
+
+</html>

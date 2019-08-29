@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>道路时间违章信息查询</title>
+
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A</h1>
+            </div>
+            <!-- //logo -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('policefunction') }}">功能选择页</a></li>
+                        <li><a href="{{ url_for('index') }}">违章查询</a></li>
+                        <li><a href="{{ url_for('monitor') }}">实时监控</a></li>
+                        <li><a href="arr">路段统计</a></li>
+                        <li><a href="{{ url_for('policeexamine') }}">人工审核</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="main-w3pvt mian-content-wfour text-center" id="home">
+    <div align="center" style="padding-top: 100px;padding-left: 200px;padding-right: 200px">
+
+        {% block title %}<h2>道路违章信息列表</h2>{% endblock %}
+        <br>
+        {% block page_content %}
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th style="text-align: center;" scope="col">车牌</th>
+                    <th style="text-align: center;" scope="col">车型</th>
+                    <th style="text-align: center;" scope="col">时间</th>
+                    <th style="text-align: center;" scope="col">地点</th>
+                    <th style="text-align: center;" scope="col">违章照片</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in u %}
+                    <tr align="center">
+                        <td style="text-align:center;vertical-align:middle;">{{ i[1] }}</td>
+                        <td style="text-align:center;vertical-align:middle;">{{ i[2] }}</td>
+                        <td style="text-align:center;vertical-align:middle;">{{ i[3] }}</td>
+                        <td style="text-align:center;vertical-align:middle;">{{ i[4] }}</td>
+                        <td style="text-align:center;vertical-align:middle;"><img src={{ i[5] }} width="200"
+                                                                                  height="120"
+                                                                                  alt={{ i[5] }}/></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endblock %}
+
+    </div>
+    <div>
+        <br>
+        <h5>——————该路段共有7条违章记录——————</h5>
+        <br><br><br>
+    </div>
+</div>
+
+</body>
+
+</html>

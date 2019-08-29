@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路段时段违章记录查询</title>
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Land Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- Custom-Files -->
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+</head>
+<body>
+
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A </h1>
+            </div>
+            <!-- //logo -->
+            <!-- nav -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('policefunction') }}">功能选择页</a></li>
+                        <li><a href="{{ url_for('index') }}">违章查询</a></li>
+                        <li><a href="{{ url_for('monitor') }}">实时监控</a></li>
+                        <li><a href="arr">路段统计</a></li>
+                        <li><a href="{{ url_for('policeexamine') }}">人工审核</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //nav -->
+        </div>
+    </div>
+</header>
+
+<div align="center">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3>该路段和时段没有违章记录！</h3>
+
+</div>
+</body>
+</html>

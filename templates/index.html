@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>登录界面</title>
+
+    <style>
+        a:hover {
+            color: #ff6b6b !important;
+        }
+    </style>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Land Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            var province = document.getElementById("province");
+            var city = document.getElementById("city");
+            var area = [['请选择街道', '万寿路街道', '永定路街道', '羊坊店街道', '甘家口街道', '八里庄街道',
+                '紫竹院街道', '北下关街道', '北太平庄街道', '学院路街道', '中关村街道', '海淀街道', '青龙桥街道',
+                '清华园街道', '燕园街道', '香山街道', '清河街道', '花园路街道', '西三旗街道', '马连洼街道', '田村路街道',
+                '上地街道', '曙光街道',], ['请选择街道', '建外街道', '朝外街道', '呼家楼街道', '三里屯街道', '左家庄街道', '香河园街道', '和平街街道', '安贞街道',
+                '亚运村街道', '小关街道', '酒仙桥街道', '麦子店街道', '团结湖街道', '六里屯街道', '八里庄街道', '双井街道', '劲松街道', '潘家园街道',
+                '垡头街道', '大屯街道', '望京街道', '奥运村街道', '东湖街道', '首都机场街道']];
+
+            function choose() {
+                var opt = "";
+                if (province.value == undefined) {
+                    province.value = 0;
+                }
+                var len = area[province.value];
+                for (var index = 0; index < len.length; index++) {
+                    opt = opt + '<option value ="' + index + '">  ' + len[index] + '</option>'
+                }
+                city.innerHTML = opt;
+            }
+
+            province.onchange = function () {
+                choose();
+            }
+            choose();
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+
+</head>
+
+<body>
+<!-- header -->
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A</h1>
+            </div>
+            <!-- //logo -->
+            <!-- nav -->
+            <div class="nav_w3ls ml-lg-5">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('policefunction') }}">功能选择页</a></li>
+                        <li><a href="{{ url_for('index') }}">违章查询</a></li>
+                        <li><a href="{{ url_for('monitor') }}">实时监控</a></li>
+                        <li><a href="arr">路段统计</a></li>
+                        <li><a href="{{ url_for('policeexamine') }}">人工审核</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //nav -->
+        </div>
+    </div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<div class="main-w3pvt mian-content-wfour text-center" id="home">
+    <div class="container">
+        <div class="style-banner mx-auto">
+            <br><br><br><br><br><br><br><br>
+            <h4 class="text-bl font-weight-bold">选择时间和地点并查询</h4>
+            <!--<p class="mt-2 text-li" id="find">Property for sale & for rent around the world</p>-->
+            <!-- form -->
+            <div class="home-form-w3ls mt-5 pt-lg-4">
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!--日期选择-->
+                            <div class="form-group">
+                                <input type="date" value="2019-08-26" id="txtDate" required="" class="form-control"/>
+                            </div>
+                            <!--区选择-->
+                            <div class="form-group">
+                                <select id="province" required="" class="form-control">
+                                    <option value="">请选择区</option>
+                                    <option value="0">海淀区</option>
+                                    <option value="1">朝阳区</option>
+                                    <option value="2">东城区</option>
+                                    <option value="3">西城区</option>
+                                    <option value="4">丰台区</option>
+                                    <option value="5">石景山区</option>
+                                    <option value="6">门头沟区</option>
+                                    <option value="7">房山区</option>
+                                    <option value="8">通州区</option>
+                                    <option value="9">顺义区</option>
+                                    <option value="10">昌平区</option>
+                                    <option value="11">大兴区</option>
+                                    <option value="12">怀柔区</option>
+                                    <option value="13">平谷区</option>
+                                    <option value="14">密云区</option>
+                                    <option value="15">延庆区</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!--时间段选择-->
+                            <div class="form-group">
+                                <select required="" class="form-control">
+                                    <option value="">请选择时间段</option>
+                                    <option value="1">早7:00-8:30</option>
+                                    <option value="2">晚17:00-18:30</option>
+                                    <option value="3">全天24小时</option>
+                                </select>
+                            </div>
+                            <!--街道选择-->
+                            <div class="form-group">
+                                <select id="city" required="" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <a href="/infoshow">
+                    <button type="submit" class="btn btn_apt"> 查询</button>
+                </a>
+            </div>
+            <!-- //form -->
+        </div>
+    </div>
+</div>
+<!-- //banner -->
+
+
+<!-- copyright -->
+
+<div class="copyright-w3ls py-4">
+    <div class="container">
+        <div class="row">
+            <!-- copyright -->
+            <p class="col-lg-8 copy-right-grids text-wh text-lg-left text-center mt-lg-2">© 2019 Land. All
+                Rights Reserved | Design by <a href="" target="_blank">C.G.A</a>
+            </p>
+            <!-- //copyright -->
+
+        </div>
+    </div>
+</div>
+<!-- //copyright -->
+<!-- move top icon -->
+<a href="#home" class="move-top text-center">
+    <span class="fa fa-angle-double-up" aria-hidden="true"></span>
+</a>
+<!-- //move top icon -->
+
+</body>
+
+</html>

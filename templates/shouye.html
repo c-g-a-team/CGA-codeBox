@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>首页·Homepage</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Land Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- Custom-Files -->
+    <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+    <!-- Bootstrap-Core-CSS -->
+    <link href=" {{ url_for('static',filename='css/style.css') }} " rel='stylesheet' type='text/css'/>
+    <!-- Style-CSS -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //Custom-Files -->
+
+</head>
+
+<body>
+<!-- header -->
+<header class="bacc">
+    <div class="container">
+        <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+            <!-- logo -->
+            <div id="logo">
+                <h1><span style="color: #ff6b6b">C.</span>G.A</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="main-w3pvt mian-content-wthree text-center" id="home">
+    <div class="container">
+        <div class="style-banner mx-auto">
+            <br> <br> <br> <br> <br> <br> <br>
+            <h3 class="text-wh font-weight-bold">欢迎使用C.G.A公交车道违章</h3>
+            <h3 class="text-wh font-weight-bold">查询处理一体化平台</h3>
+            <h2 style="color: ghostwhite">-----------------------------------------------------------------</h2>
+            <h2 class="text-wh font-weight-bold">点击下方登录按钮开始查询</h2>
+        </div>
+        <div class="style-banner mx-auto">
+            <br> <br>
+            <a href="{{ url_for('login01') }}">
+                <button type="submit" class="btn button-style-w5"> 车主登录</button>
+            </a>
+            <a href="{{ url_for('login') }}">
+                <button type="submit" class="btn button-style-w5"> 管理员登录</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
